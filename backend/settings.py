@@ -118,8 +118,8 @@ AWS_SES_REGION_ENDPOINT = f'email.{AWS_SES_REGION_NAME}.amazonaws.com'
 AWS_SES_FROM_EMAIL = getenv('AWS_SES_FROM_EMAIL')
 USE_SES_V2 = True
 
-DOMAIN = getenv('Domain')
-SITE_NAME = 'ModQueue'
+DOMAIN = getenv('DOMAIN')
+SITE_NAME = 'Beckoning Bell'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -225,9 +225,6 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
     'openid'
 ]
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ['first_name', 'last_name']
-
-SOCIAL_AUTH_GITHUB_KEY = getenv('GITHUB_AUTH_KEY')
-SOCIAL_AUTH_GITHUB_SECRET = getenv('GITHUB_AUTH_KEY')
 
 AUTH_REDDIT_OAUTH2_KEY = getenv('REDDIT_AUTH_KEY')
 AUTH_REDDIT_OAUTH2_SECRET = getenv('REDDIT_AUTH_SECRET_KEY')
