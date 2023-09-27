@@ -171,10 +171,11 @@ else:
     }
     AWS_DEFAULT_ACL = 'public-read'
     AWS_LOCATION = 'static' # Static files inside bucket.
+    AWS_MEDIA_LOCATION = 'media'
     AWS_S3_CUSTOM_DOMAIN = getenv('AWS_S3_CUSTOM_DOMAIN')
     STORAGES = {
-        'default': { 'BACKEND': 'storages.backends.s3.S3Storage'},
-        'staticfiles' : { 'BACKEND': 'storages.backends.s3.S3Storage'}
+        'default': { 'BACKEND': 'custom_storages.CustomS3Boto3Storage'},
+        'staticfiles' : { 'BACKEND': 'storages.backends.s3boto3.S3StaticStorage'}
     }
 
 AUTHENTICATION_BACKENDS = [
