@@ -206,9 +206,12 @@ DJOSER = {
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': getenv('REDIRECT_URLS').split(',')
 }
 
+# SIMPLE_JWT={
+    # Configure access token lifetime here.
+# }
+
 AUTH_COOKIE = 'access'
-AUTH_COOKIE_ACCESS_MAX_AGE = 60 * 5 # JSON web tokens expire after five minutes.
-AUTH_COOKIE_REFRESH_MAX_AGE = 60 * 60 * 24 # 24 hours.
+AUTH_COOKIE_MAX_AGE = 60 * 60 * 24 # The lifetime for cookie holding value, access/refresh token have the same lifetime, currently set to a day..
 AUTH_COOKIE_SECURE = getenv('AUTH_COOKIE_SECURE', 'True') == 'True'
 # We need a secure connection for cookies to be sent.
 AUTH_COOKIE_HTTP_ONLY = True # JavaScript can't access values in the browser.
